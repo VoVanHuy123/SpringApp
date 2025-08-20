@@ -4,8 +4,10 @@
  */
 package com.vvh.configs;
 
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -18,8 +20,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @ComponentScan(basePackages = {
     "com.vvh.controllers",
-    "com.vvh.repositories.impl"
+    "com.vvh.repositories.impl",
+    "com.vvh.services"
 })
+@EnableTransactionManagement
 public class WebAppContextConfigs implements WebMvcConfigurer{
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
